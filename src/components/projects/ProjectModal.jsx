@@ -140,8 +140,15 @@ export const ProjectModal = ({ project, onClose }) => {
 
           {/* Action Buttons */}
           <div className="pt-4 border-t border-slate-800 flex flex-wrap items-center justify-end gap-3">
-            <GitHubButton url={project.github} />
-            <LiveDemoButton url={project.demo} />
+            {project.githubFrontend && project.githubBackend ? (
+              <>
+                <GitHubButton url={project.githubFrontend} label="Frontend Repo" />
+                <GitHubButton url={project.githubBackend} label="Backend Repo" />
+              </>
+            ) : (
+              <GitHubButton url={project.github || project.githubUrl} />
+            )}
+            <LiveDemoButton url={project.demo || project.liveUrl} />
           </div>
         </motion.div>
       </div>

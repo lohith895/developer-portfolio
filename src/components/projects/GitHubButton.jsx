@@ -2,7 +2,7 @@ import React from 'react';
 import { FaGithub } from 'react-icons/fa';
 import { Button } from '../common/Button';
 
-export const GitHubButton = ({ url }) => {
+export const GitHubButton = ({ url, label = "GitHub Repository" }) => {
   if (!url) return null;
 
   return (
@@ -12,7 +12,7 @@ export const GitHubButton = ({ url }) => {
       icon={FaGithub}
       onClick={() => window.open(url, '_blank')}
     >
-      GitHub Repository
+      {label}
     </Button>
   );
 };

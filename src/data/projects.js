@@ -3,12 +3,12 @@ export const PROJECT_CATEGORIES = ["All", "Full Stack", "Java", "AI & ML", "Web"
 export const PROJECTS = [
   {
     id: "anti-proxy-attendance",
-    title: "Anti-Proxy Smart Appearance Monitoring System",
+    title: "Design and Implementation of a Scalable Real-Time Attendance Management System Using Deep Learning-Based Face Recognition",
     category: "AI & ML",
     duration: "2025",
-    shortDescription: "AI-powered attendance monitoring system using YOLOv8 face detection, InsightFace verification, and OpenCV.",
-    fullDescription: "An automated AI-powered attendance monitoring platform engineered to eliminate proxy attendance in institutions and enterprise environments. The system utilizes YOLOv8 for multi-face detection, OpenCV for real-time video processing, InsightFace for high-precision facial feature verification, and PostgreSQL for secure record logging.",
-    overview: "Automates roll-call attendance through real-time computer vision stream analysis, preventing photograph/proxy spoofing.",
+    shortDescription: "Scalable real-time attendance management system powered by deep learning-based face recognition, YOLOv8 face detection, InsightFace verification, and OpenCV.",
+    fullDescription: "An automated real-time attendance management platform engineered using deep learning-based face recognition to eliminate proxy attendance in institutions and enterprise environments. The system utilizes YOLOv8 for multi-face detection, OpenCV for real-time video processing, InsightFace for high-precision facial feature verification, and PostgreSQL for secure record logging.",
+    overview: "Automates roll-call attendance through real-time computer vision stream analysis using deep learning facial recognition.",
     problem: "Manual paper roll-call attendance is time-consuming and vulnerable to proxy signing and identity fraud.",
     solution: "Designed a real-time face detection pipeline using YOLOv8 and InsightFace embeddings with secure JWT authentication and role-based access.",
     featured: true,
@@ -31,8 +31,12 @@ export const PROJECTS = [
     challenges: [
       { title: "Multi-Face Stream Latency", solution: "Optimized frame resolution & vector search index, maintaining sub-300ms verification times." }
     ],
-    github: "https://github.com/appalalohith/anti-proxy-attendance",
-    demo: "https://smart-attendance-demo.vercel.app"
+    github: "https://github.com/lohith895/Attendance-frontend",
+    githubUrl: "https://github.com/lohith895/Attendance-frontend",
+    githubFrontend: "https://github.com/lohith895/Attendance-frontend",
+    githubBackend: "https://github.com/lohith895/Attendance-backend",
+    demo: "https://attendai.support/",
+    liveUrl: "https://attendai.support/"
   },
   {
     id: "hospital-management-system",

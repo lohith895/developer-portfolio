@@ -62,20 +62,31 @@ export const ProjectCard = ({ project, index }) => {
       {/* Card Footer Actions */}
       <div className="p-5 pt-0 flex items-center justify-between border-t border-slate-800/80 mt-4">
         <div className="flex items-center gap-3 pt-3">
-          {project.githubUrl && (
+          {(project.githubFrontend || project.githubUrl || project.github) && (
             <a
-              href={project.githubUrl}
+              href={project.githubFrontend || project.githubUrl || project.github}
               target="_blank"
               rel="noopener noreferrer"
               className="text-slate-400 hover:text-cyan-400 text-lg transition-colors"
-              title="GitHub Repository"
+              title={project.githubFrontend ? "Frontend GitHub Repo" : "GitHub Repository"}
             >
               <FaGithub />
             </a>
           )}
-          {project.liveUrl && (
+          {project.githubBackend && (
             <a
-              href={project.liveUrl}
+              href={project.githubBackend}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-slate-400 hover:text-cyan-400 text-lg transition-colors"
+              title="Backend GitHub Repo"
+            >
+              <FaGithub />
+            </a>
+          )}
+          {(project.liveUrl || project.demo) && (
+            <a
+              href={project.liveUrl || project.demo}
               target="_blank"
               rel="noopener noreferrer"
               className="text-slate-400 hover:text-cyan-400 text-base transition-colors"

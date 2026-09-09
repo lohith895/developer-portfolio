@@ -9,7 +9,7 @@ export const ProjectSEO = ({ project }) => {
 
   const description = project
     ? project.shortDescription || project.fullDescription
-    : "Explore engineering case studies by Appala Lohith Venkata Guptha including Anti-Proxy Smart Attendance System and Enterprise Hospital Management System.";
+    : "Explore engineering case studies by Appala Lohith Venkata Guptha including Scalable Real-Time Attendance Management System Using Deep Learning-Based Face Recognition and Enterprise Hospital Management System.";
 
   const pageUrl = project
     ? `${DEFAULT_SEO.domain}/projects/${project.id}`

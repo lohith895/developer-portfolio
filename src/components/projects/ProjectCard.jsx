@@ -56,20 +56,31 @@ export const ProjectCard = memo(({ project, index, onViewCaseStudy }) => {
         {/* Card Footer Actions */}
         <div className="pt-3 border-t border-slate-800 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            {project.github && (
+            {(project.githubFrontend || project.github || project.githubUrl) && (
               <a
-                href={project.github}
+                href={project.githubFrontend || project.github || project.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-slate-400 hover:text-blue-400 text-base transition-colors"
-                title="GitHub Repo"
+                title={project.githubFrontend ? "Frontend GitHub Repo" : "GitHub Repo"}
               >
                 <FaGithub />
               </a>
             )}
-            {project.demo && (
+            {project.githubBackend && (
               <a
-                href={project.demo}
+                href={project.githubBackend}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-slate-400 hover:text-blue-400 text-base transition-colors"
+                title="Backend GitHub Repo"
+              >
+                <FaGithub />
+              </a>
+            )}
+            {(project.demo || project.liveUrl) && (
+              <a
+                href={project.demo || project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-slate-400 hover:text-blue-400 text-sm transition-colors"

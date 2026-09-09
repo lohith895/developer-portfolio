@@ -3,7 +3,7 @@ import { FaRobot, FaHospital, FaLaptopCode, FaBrain, FaAward, FaCheckCircle } fr
 export const ACHIEVEMENTS_DATA = [
   {
     id: "ach-1",
-    title: "Anti-Proxy Smart Appearance Monitoring System",
+    title: "Design and Implementation of a Scalable Real-Time Attendance Management System Using Deep Learning-Based Face Recognition",
     description: "Developed AI-powered attendance system using YOLOv8 face detection, InsightFace verification, and OpenCV.",
     icon: FaRobot,
     color: "text-blue-400",

@@ -63,22 +63,42 @@ const ProjectDetails = () => {
           </p>
 
           <div className="flex flex-wrap items-center gap-4 pt-2">
-            {project.liveUrl && (
+            {(project.liveUrl || project.demo) && (
               <Button
                 variant="primary"
                 size="md"
                 icon={FaExternalLinkAlt}
-                onClick={() => window.open(project.liveUrl, '_blank')}
+                onClick={() => window.open(project.liveUrl || project.demo, '_blank')}
               >
                 Visit Live Demo
               </Button>
             )}
-            {project.githubUrl && (
+            {project.githubFrontend && (
               <Button
                 variant="outline"
                 size="md"
                 icon={FaGithub}
-                onClick={() => window.open(project.githubUrl, '_blank')}
+                onClick={() => window.open(project.githubFrontend, '_blank')}
+              >
+                Frontend Code
+              </Button>
+            )}
+            {project.githubBackend && (
+              <Button
+                variant="outline"
+                size="md"
+                icon={FaGithub}
+                onClick={() => window.open(project.githubBackend, '_blank')}
+              >
+                Backend Code
+              </Button>
+            )}
+            {!project.githubFrontend && (project.githubUrl || project.github) && (
+              <Button
+                variant="outline"
+                size="md"
+                icon={FaGithub}
+                onClick={() => window.open(project.githubUrl || project.github, '_blank')}
               >
                 View Source Code
               </Button>

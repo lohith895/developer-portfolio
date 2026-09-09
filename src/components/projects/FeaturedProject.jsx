@@ -77,8 +77,15 @@ export const FeaturedProject = ({ project, reverse = false, onViewCaseStudy }) =
               >
                 Read Case Study
               </Button>
-              <GitHubButton url={project.github} />
-              <LiveDemoButton url={project.demo} />
+              {project.githubFrontend && project.githubBackend ? (
+                <>
+                  <GitHubButton url={project.githubFrontend} label="Frontend Repo" />
+                  <GitHubButton url={project.githubBackend} label="Backend Repo" />
+                </>
+              ) : (
+                <GitHubButton url={project.github || project.githubUrl} />
+              )}
+              <LiveDemoButton url={project.demo || project.liveUrl} />
             </div>
           </div>
         </div>
