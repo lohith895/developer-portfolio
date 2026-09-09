@@ -1,13 +1,13 @@
-import { FaRobot, FaHospital, FaLaptopCode, FaBrain, FaUsers } from 'react-icons/fa';
+import { FaCrown, FaRobot, FaHospital, FaLaptopCode, FaBrain } from 'react-icons/fa';
 
 export const ACHIEVEMENTS_DATA = [
   {
     id: "ach-1",
     title: "President, AIIM Club",
-    description: "Led club initiatives, events, workshops, and student member engagement across campus.",
-    icon: FaUsers,
+    description: "Led club initiatives, events, and member engagement",
+    icon: FaCrown,
     color: "text-amber-400",
-    category: "Leadership & Club",
+    category: "Leadership & Organization",
     period: "Oct 2024 – Jan 2026"
   },
   {

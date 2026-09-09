@@ -13,7 +13,7 @@ export const Achievements = () => {
         center={false}
       />
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 my-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 my-6">
         {ACHIEVEMENTS_DATA.map((achievement, index) => (
           <AchievementCard key={achievement.id} achievement={achievement} index={index} />
         ))}
