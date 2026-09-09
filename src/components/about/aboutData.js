@@ -51,7 +51,7 @@ export const HIGHLIGHTS = [
 ];
 
 export const STATS_DATA = [
-  { label: "Years Experience", value: 1, suffix: "+" },
+  { label: "Experience", value: 7, suffix: "+ Months" },
   { label: "Professional Roles & Internships", value: 3, suffix: "+" },
   { label: "Major Production Projects", value: 4, suffix: "+" },
   { label: "Technologies Mastered", value: 25, suffix: "+" }

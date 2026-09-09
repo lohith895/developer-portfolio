@@ -36,7 +36,7 @@ export const AboutImage = () => {
             <FaAward />
           </div>
           <div>
-            <span className="text-xs font-bold text-slate-100 block">1+ Years</span>
+            <span className="text-xs font-bold text-slate-100 block">7+ Months</span>
             <span className="text-[10px] text-slate-400">Engineering</span>
           </div>
         </div>
