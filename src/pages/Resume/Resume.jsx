@@ -6,9 +6,11 @@ import { SectionTitle } from '../../components/common/SectionTitle';
 import { PERSONAL_INFO } from '../../utils/constants';
 import { EXPERIENCES } from '../../data/experience';
 import { EDUCATION } from '../../data/education';
+import { CERTIFICATIONS_DATA } from '../../data/certifications';
+import { ACHIEVEMENTS_DATA } from '../../data/achievements';
 import { Button } from '../../components/common/Button';
 import { downloadResume } from '../../utils/helpers';
-import { FaDownload, FaBriefcase, FaGraduationCap } from 'react-icons/fa';
+import { FaDownload, FaBriefcase, FaGraduationCap, FaCertificate, FaAward } from 'react-icons/fa';
 
 export const Resume = () => {
   return (
@@ -19,7 +21,7 @@ export const Resume = () => {
           <SectionTitle
             badge="Curriculum Vitae"
             title="Official Resume"
-            subtitle="Software Engineering summary, professional experience, education, and technical capabilities."
+            subtitle="Software Engineering summary, professional experience, education, certifications, and achievements."
           />
 
           <div className="glass-card p-6 sm:p-10 rounded-3xl border border-slate-800 space-y-8 shadow-2xl my-8">
@@ -92,6 +94,47 @@ export const Resume = () => {
                       <span className="text-xs font-mono text-emerald-400 font-bold block">{edu.grade}</span>
                       <span className="text-[11px] font-mono text-slate-400">{edu.period}</span>
                     </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Certifications */}
+            <div className="space-y-4">
+              <h2 className="text-xs font-bold uppercase tracking-wider text-slate-400 flex items-center gap-2">
+                <FaCertificate className="text-amber-400" />
+                <span>Certifications</span>
+              </h2>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {CERTIFICATIONS_DATA.map((cert) => (
+                  <div key={cert.id} className="glass-panel p-3.5 rounded-xl border border-slate-800 flex items-center justify-between">
+                    <div>
+                      <h3 className="text-xs font-bold text-slate-200">{cert.title}</h3>
+                      <span className="text-[11px] text-slate-400 block">{cert.issuer}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Achievements & Leadership */}
+            <div className="space-y-4">
+              <h2 className="text-xs font-bold uppercase tracking-wider text-slate-400 flex items-center gap-2">
+                <FaAward className="text-emerald-400" />
+                <span>Achievements & Leadership</span>
+              </h2>
+
+              <div className="space-y-3">
+                {ACHIEVEMENTS_DATA.map((ach) => (
+                  <div key={ach.id} className="glass-panel p-4 rounded-xl border border-slate-800 flex justify-between items-start">
+                    <div className="space-y-1 pr-4">
+                      <h3 className="text-sm font-bold text-slate-100">{ach.title}</h3>
+                      <p className="text-xs text-slate-300 italic">{ach.description}</p>
+                    </div>
+                    {ach.period && (
+                      <span className="text-[11px] font-mono text-cyan-400 flex-shrink-0">{ach.period}</span>
+                    )}
                   </div>
                 ))}
               </div>

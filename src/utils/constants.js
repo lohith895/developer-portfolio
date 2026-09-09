@@ -35,5 +35,5 @@ export const STATS = [
   { label: "CGPA (B.Tech CSE-AI)", value: 7.82, suffix: "" },
   { label: "Professional Roles", value: 3, suffix: "+" },
   { label: "Production Projects", value: 2, suffix: "+" },
-  { label: "Certifications", value: 6, suffix: "+" }
+  { label: "Certifications", value: 8, suffix: "+" }
 ];

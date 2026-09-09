@@ -27,6 +27,9 @@ export const AchievementCard = ({ achievement, index }) => {
 
           <h3 className="text-sm font-bold text-slate-100">{achievement.title}</h3>
           <p className="text-xs text-slate-400 leading-relaxed">{achievement.description}</p>
+          {achievement.period && (
+            <span className="text-[11px] font-mono text-cyan-400 block pt-1">{achievement.period}</span>
+          )}
         </div>
       </Card>
     </motion.div>
