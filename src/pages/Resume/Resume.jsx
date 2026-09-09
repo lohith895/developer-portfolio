@@ -10,9 +10,12 @@ import { CERTIFICATIONS_DATA } from '../../data/certifications';
 import { ACHIEVEMENTS_DATA } from '../../data/achievements';
 import { Button } from '../../components/common/Button';
 import { downloadResume } from '../../utils/helpers';
-import { FaDownload, FaBriefcase, FaGraduationCap, FaCertificate, FaAward } from 'react-icons/fa';
+import { FaDownload, FaBriefcase, FaGraduationCap, FaCertificate, FaAward, FaCrown } from 'react-icons/fa';
 
 export const Resume = () => {
+  const leadershipAchievements = ACHIEVEMENTS_DATA.filter((a) => a.featured);
+  const technicalAchievements = ACHIEVEMENTS_DATA.filter((a) => !a.featured);
+
   return (
     <>
       <ResumeSEO />
@@ -48,6 +51,35 @@ export const Resume = () => {
               <h2 className="text-xs font-bold uppercase tracking-wider text-slate-400">Professional Summary</h2>
               <p className="text-sm text-slate-300 leading-relaxed">{PERSONAL_INFO.bio}</p>
             </div>
+
+            {/* Leadership & Position of Responsibility Section */}
+            {leadershipAchievements.length > 0 && (
+              <div className="space-y-4">
+                <h2 className="text-xs font-bold uppercase tracking-wider text-amber-400 flex items-center gap-2">
+                  <FaCrown className="text-amber-400" />
+                  <span>Leadership & Positions of Responsibility</span>
+                </h2>
+
+                <div className="space-y-3">
+                  {leadershipAchievements.map((ach) => (
+                    <div key={ach.id} className="glass-panel p-4 rounded-2xl border border-amber-500/40 bg-gradient-to-r from-amber-500/10 via-slate-900 to-slate-950 flex justify-between items-start">
+                      <div className="space-y-1 pr-4">
+                        <div className="flex items-center gap-2">
+                          <h3 className="text-sm font-bold text-white">{ach.title}</h3>
+                          <span className="text-[10px] font-mono font-bold text-amber-400 bg-amber-500/10 border border-amber-500/30 px-2 py-0.5 rounded-full">
+                            ★ Featured
+                          </span>
+                        </div>
+                        <p className="text-xs text-slate-300 italic">{ach.description}</p>
+                      </div>
+                      {ach.period && (
+                        <span className="text-[11px] font-mono text-cyan-400 flex-shrink-0 bg-cyan-950/40 px-2.5 py-1 rounded-md border border-cyan-500/30">{ach.period}</span>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
 
             {/* Experience */}
             <div className="space-y-4">
@@ -118,15 +150,15 @@ export const Resume = () => {
               </div>
             </div>
 
-            {/* Achievements & Leadership */}
+            {/* Technical Achievements */}
             <div className="space-y-4">
               <h2 className="text-xs font-bold uppercase tracking-wider text-slate-400 flex items-center gap-2">
                 <FaAward className="text-emerald-400" />
-                <span>Achievements & Leadership</span>
+                <span>Technical & Engineering Achievements</span>
               </h2>
 
               <div className="space-y-3">
-                {ACHIEVEMENTS_DATA.map((ach) => (
+                {technicalAchievements.map((ach) => (
                   <div key={ach.id} className="glass-panel p-4 rounded-xl border border-slate-800 flex justify-between items-start">
                     <div className="space-y-1 pr-4">
                       <h3 className="text-sm font-bold text-slate-100">{ach.title}</h3>

@@ -8,7 +8,8 @@ export const ACHIEVEMENTS_DATA = [
     icon: FaCrown,
     color: "text-amber-400",
     category: "Leadership & Organization",
-    period: "Oct 2024 – Jan 2026"
+    period: "Oct 2024 – Jan 2026",
+    featured: true
   },
   {
     id: "ach-2",
